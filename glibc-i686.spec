@@ -41,9 +41,9 @@ cp %{SOURCE2} $RPM_BUILD_ROOT/usr/src/glibc/
 
 %post
 cd /usr/src/glibc/
-rpm2cpio /usr/src/glibc-2.17-317.el7.i686.rpm | cpio -i --make-directories
-rpm2cpio /usr/src/glibc-devel-2.17-317.el7.i686.rpm | cpio -i --make-directories
-rpm2cpio /usr/src/glibc-static-2.17-317.el7.i686.rpm | cpio -i --make-directories
+rpm2cpio glibc-2.17-317.el7.i686.rpm | cpio -i --make-directories
+rpm2cpio glibc-devel-2.17-317.el7.i686.rpm | cpio -i --make-directories
+rpm2cpio glibc-static-2.17-317.el7.i686.rpm | cpio -i --make-directories
 mkdir -p /lib/
 cp -R lib/* /lib/
 rm -f usr/sbin/iconvconfig
@@ -441,9 +441,9 @@ rm -f /usr/lib/libc_stubs.a
 rm -rf "$RPM_BUILD_ROOT"
 
 %files
-/usr/src/glibc-2.17-317.el7.i686.rpm
-/usr/src/
-/usr/src/
+/usr/src/glibc/glibc-2.17-317.el7.i686.rpm
+/usr/src/glibc/glibc-devel-2.17-317.el7.i686.rpm
+/usr/src/glibc/glibc-static-2.17-317.el7.i686.rpm
 
 
 %changelog

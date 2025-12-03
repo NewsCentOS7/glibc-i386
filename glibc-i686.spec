@@ -1,13 +1,13 @@
 Summary: The GNU libc libraries
-Name: glibc-i386
+Name: glibc-i686
 Version: 2.17
 Release: 317%{?dist}
 License: LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 Group: System Environment/Libraries
 URL: http://www.gnu.org/software/glibc/
-Source1: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm
-Source2: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm
-Source3: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm
+Source0: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-2.17-317.el7.i686.rpm
+Source1: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-devel-2.17-317.el7.i686.rpm
+Source2: https://vault.epel.cloud/7.9.2009/os/x86_64/Packages/glibc-static-2.17-317.el7.i686.rpm
 
 
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -21,9 +21,9 @@ BuildRequires: rpm cpio
 # Cleanup any previous installs...
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/src/glibc/
+cp %{SOURCE0} /usr/src/glibc/
 cp %{SOURCE1} /usr/src/glibc/
 cp %{SOURCE2} /usr/src/glibc/
-cp %{SOURCE3} /usr/src/glibc/
 
 
 
